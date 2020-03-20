@@ -4,12 +4,12 @@ import sys
 
 def rock_paper_scissors(n):
   
-  def generate(l, num):
-    if len(l) == n:
-      return [l]
+  def crt_arr(lis, num):
+    if len(lis) == n:
+      return [lis]
     else:
-      return generate(l + ['rock'], num) + generate(l + ['paper'], num) + generate(l + ['scissors'], num)
-  return generate([], n)
+      return crt_arr(lis + ['rock'], num) + crt_arr(lis + ['paper'], num) + crt_arr(lis + ['scissors'], num)
+  return crt_arr([], n)
 
 rock_paper_scissors(3)
 
